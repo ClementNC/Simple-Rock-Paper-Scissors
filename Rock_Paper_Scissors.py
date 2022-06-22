@@ -1,7 +1,39 @@
 import random
+
+# The variables below store the ascii art of rock, paper, scissors
+rock = """
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+"""
+
+paper = """
+     _______
+---'    ____)____
+           ______)
+          _______)
+         _______)
+---.__________)
+"""
+
+scissors = """
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+"""
+
+choices = [rock, paper, scissors]
+
+# Start of the code for the game.
 play_again = 'Y'
-count_win = 0
-games_played = 0
+count_win = 0 # count_win counts how many times the users have won.
+games_played = 0 # games_played counts the total number of games the user has played.
 while play_again.upper() == 'Y':
     user_choice = 3
     games_played += 1
@@ -9,62 +41,9 @@ while play_again.upper() == 'Y':
         user_choice = int(input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors\n"))
     comp_choice = random.randint(0, 2)
     print("You chose:")
-    if user_choice == 0:
-        print("""
-            _______
-        ---'   ____)
-              (_____)
-              (_____)
-              (____)
-        ---.__(___)
-        """)
-
-    elif user_choice == 1:
-        print("""
-             _______
-        ---'    ____)____
-                   ______)
-                  _______)
-                 _______)
-        ---.__________)
-        """)
-    else:
-        print("""
-            _______
-        ---'   ____)____
-                   ______)
-               __________)
-              (____)
-        ---.__(___)
-        """)
+    print(choices[user_choice])
     print("Computer chose:")
-    if comp_choice == 0:
-        print("""
-            _______
-        ---'   ____)
-              (_____)
-              (_____)
-              (____)
-        ---.__(___)
-        """)
-    elif comp_choice == 1:
-        print("""
-            _______
-        ---'    ____)____
-                   ______)
-                  _______)
-                 _______)
-        ---.__________)
-        """)
-    else:
-        print("""
-            _______
-        ---'   ____)____
-                   ______)
-               __________)
-              (____)
-        ---.__(___)
-        """)
+    print(choices[comp_choice])
     if user_choice == comp_choice:
         print("It's a draw.")
     elif user_choice == 0 and comp_choice == 2:
