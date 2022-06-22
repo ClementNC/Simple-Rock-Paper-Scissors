@@ -49,6 +49,8 @@ while play_again.upper() == 'Y':
     elif user_choice == 0 and comp_choice == 2:
         print("You win!")
         count_win += 1
+    elif user_choice == 2 and comp_choice == 0:
+        print("Computer wins!")
     elif user_choice > comp_choice:
         print("You win!")
         count_win += 1
